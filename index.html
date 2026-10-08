@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Seatwork 1: Nickname Atlas</title>
+
+    <!-- Python -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+    /* ===== Beach Theme ===== */
+    body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 16px 140px;
+        font-family: "Trebuchet MS", "Lucida Sans", sans-serif;
+        color: #144552;
+        background:
+
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C150 100 350 0 600 40 C850 80 1050 0 1200 40 L1200 120 L0 120Z' fill='%2329b6c9' fill-opacity='.85'/%3E%3Cpath d='M0 70 C200 20 400 110 600 70 C800 30 1000 110 1200 70 L1200 120 L0 120Z' fill='%230f8fa8'/%3E%3C/svg%3E") bottom / 100% 110px no-repeat fixed,
+
+            radial-gradient(circle at 85% 12%, #fff3b0 0, #ffd95e 6%, rgba(255,217,94,0) 18%) fixed,
+
+            linear-gradient(180deg, #8fd8f0 0%, #d9f2f7 40%, #fbeccb 75%, #f3d9a4 100%) fixed;
+    }
+
+
+    #atlas {
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 28px 32px 32px;
+        background: rgba(255, 249, 232, 0.92);
+        border: 3px dashed #e8b96a;
+        border-radius: 24px;
+        box-shadow: 0 12px 30px rgba(15, 143, 168, 0.25);
+    }
+
+
+    #atlas label {
+        display: inline-block;
+        margin: 4px 0 4px 8px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        color: #0b5c70;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+    #atlas label:hover {
+        background: #bfeaf2;
+        transform: translateX(4px);
+    }
+
+
+    #atlas .form-check-input {
+        width: 1.2em;
+        height: 1.2em;
+        border: 2px solid #29b6c9;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+    #atlas .form-check-input:checked {
+        background-color: #ff7a59;
+        border-color: #ff7a59;
+    }
+    #atlas .form-check-input:focus {
+        box-shadow: 0 0 0 0.25rem rgba(41, 182, 201, 0.35);
+    }
+
+
+    #atlas .btn-success {
+        margin-top: 20px;
+        padding: 10px 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #fff;
+        background: linear-gradient(135deg, #ff9a5a, #ff5e6c);
+        border: none;
+        border-radius: 999px;
+        box-shadow: 0 6px 14px rgba(255, 94, 108, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    #atlas .btn-success:hover {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 10px 20px rgba(255, 94, 108, 0.5);
+    }
+
+
+    #output {
+        max-width: 520px;
+        margin: 24px auto 0;
+        padding: 20px 28px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 3px solid #29b6c9;
+        border-radius: 24px;
+        box-shadow: 0 12px 30px rgba(15, 143, 168, 0.25);
+        color: #0b5c70;
+        font-weight: bold;
+    }
+
+    #output:empty {
+        display: none;
+    }
+
+    #output div {
+        margin: 6px 0;
+        padding: 8px 14px;
+        background: #e6f7fa;
+        border-left: 6px solid #ff7a59;
+        border-radius: 12px;
+    }
+</style>
+</head>
+<body>
+        <!-- Bootstrap Script -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+            <div id="output" class="mt-3 fw-bold">
+                <form>
+                    <input type="checkbox" class="form-check-input " id="micronesia">
+                    <label class="form-label fw-bold">Federeated States of Micronesia</label><br>
+
+                    <input type="checkbox" class="form-check-input " id="australia">
+                    <label class="form-label fw-bold">Australia</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="palau">
+                    <label class="form-label fw-bold">Palau</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="zealand">
+                    <label class="form-label fw-bold">New Zealand</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="marshall">
+                    <label class="form-label fw-bold">Marshall Islands</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="tuvalu">
+                    <label class="form-label fw-bold">Tuvalu</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="nauru">
+                    <label class="form-label fw-bold">Nauru</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="papua">
+                    <label class="form-label fw-bold">Papua New Guinea</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="solomon">
+                    <label class="form-label fw-bold">Solomon Islands</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="tonga">
+                    <label class="form-label fw-bold">Tonga</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="samoa">
+                    <label class="form-label fw-bold">Samoa</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="fiji">
+                    <label class="form-label fw-bold">Fiji</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="vanuatu">
+                    <label class="form-label fw-bold">Vanuatu</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="kiribati">
+                    <label class="form-label fw-bold">Kiribati</label><br>
+
+                    <input type="button" class="btn btn-success" value="REVEAL"style="font-family: lucida sans;" py-click="showcase">
+                </form>
+            </div>
+
+            <py-script src="main.py"></py-script>
+</body>
+</html>
